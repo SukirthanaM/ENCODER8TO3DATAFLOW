@@ -36,21 +36,55 @@ Figure 02  Encoder 8 * 3
 
 **Procedure**
 
-/* write all the steps invloved */
+/* write all the steps invloved 
+
+1.Understand the Encoder:
+
+An 8-to-3 encoder has 8 input lines (D[7:0]) and 3 output lines (Y[2:0]).
+
+Only one input should be high at a time.
+
+2.Write the Boolean Equations:
+
+Y[2] = D7 + D6 + D5 + D4
+
+Y[1] = D7 + D6 + D3 + D2
+
+Y[0] = D7 + D5 + D3 + D1
+
+3.Use Dataflow Modeling:
+
+Implement these equations using assign statements in Verilog or concurrent signal assignments in VHDL.
+*/
 
 **PROGRAM**
 
 /* Program for Encoder 8 To 3 in Dataflow Modelling and verify its truth table in quartus using Verilog programming. 
 
-Developed by: RegisterNumber:
+Developed by: Sukirthana.M
+RegisterNumber: 212224220112
+
+```
+module EXP05(din,a,b,c);
+input [0:7] din;
+output a,b,c;
+assign a=(din[4]| din[5]| din[6]|din[7]);
+assign b=(din[2]| din[3]| din[6]|din[7]);
+assign c=(din[1]| din[3]| din[5]|din[7]);
+endmodule
+```
 */
 
 **RTL LOGIC FOR Encoder 8 To 3 in Dataflow Modelling**
 
+![image](https://github.com/user-attachments/assets/a325e58e-e171-46e6-b91e-7cdbd0b07bb2)
+
+
 **TIMING DIGRAMS FOR Encoder 8 To 3 in Dataflow Modelling**
+![image](https://github.com/user-attachments/assets/b1c8dd06-2501-45bf-b09e-b2479ec2b186)
 
 **RESULTS**
 
-
+Thus the OUTPUT'S of encoder and decoder are verified by synthesizing and simulating the VERILOG code.
 
 
